@@ -1,0 +1,37 @@
+<!-- Logotip horitzontal FoodLogístic S.A
+     Descripció: camió estilitzat amb fulla i cercle que simbolitzen logística i alimentació. -->
+<svg width="250" height="60" viewBox="0 0 250 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Logotip de FoodLogístic S.A</title>
+  <desc id="logoDesc">Camió blau estilitzat amb una fulla verda i un cercle que representen logística i productes frescos, amb el text FoodLogístic S.A al costat.</desc>
+  <defs>
+    <linearGradient id="truckGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0E4C73"/>
+      <stop offset="100%" stop-color="#0A3652"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Camió -->
+  <g transform="translate(5,10)">
+    <rect x="0" y="12" width="70" height="22" rx="6" fill="url(#truckGradient)"/>
+    <rect x="48" y="4" width="22" height="20" rx="4" fill="#0E4C73"/>
+    <rect x="52" y="8" width="10" height="10" rx="2" fill="#ffffff" opacity="0.9"/>
+
+    <!-- Rodes -->
+    <circle cx="16" cy="37" r="5" fill="#1F2933"/>
+    <circle cx="50" cy="37" r="5" fill="#1F2933"/>
+
+    <!-- Fulla / aliment -->
+    <circle cx="26" cy="12" r="8" fill="#61A656" opacity="0.95"/>
+    <path d="M22 12c2.5-3 5.5-4.5 8-4-0.5 2.5-2 5.5-4.5 8-2.5 2.5-4.8 3.8-7 4 0.2-2.4 1.5-5 3.5-8z" fill="#ffffff" opacity="0.9"/>
+  </g>
+
+  <!-- Text -->
+  <g transform="translate(90,18)" fill="#0E4C73">
+    <text x="0" y="16" font-family="Poppins, system-ui, sans-serif" font-weight="700" font-size="18">
+      FoodLogístic
+    </text>
+    <text x="0" y="32" font-family="Lexend, system-ui, sans-serif" font-weight="400" font-size="10" fill="#578C56">
+      S.A
+    </text>
+  </g>
+</svg>
