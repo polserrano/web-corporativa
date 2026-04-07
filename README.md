@@ -1,6 +1,6 @@
 # Web Corporativa de Food Logístic S.A.
 
-Aquesta és la web corporativa de Food Logístic S.A, una empresa fictícia dedicada en la distribució i logística alimentària a nivell nacional amb seu a Mataró. dins el mòdul *Projecte Intermodular*.
+Aquesta és la web corporativa de **Food Logístic S.A**, una empresa fictícia dedicada en la distribució i logística alimentària a nivell nacional amb seu a Mataró. dins el mòdul *Projecte Intermodular*.
 
 ## Demostració
 
@@ -16,4 +16,4 @@ Per la creació d'aquesta web, s'han utilitzat les següents tecnologies i eines
 
 ## Autor
 
-👤 Pol Serrano Aromí
+👤 **Pol Serrano Aromí**
