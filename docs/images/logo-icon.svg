@@ -1,0 +1,24 @@
+<!-- Icona del logotip FoodLogístic S.A (només símbol) -->
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoIconTitle logoIconDesc">
+  <title id="logoIconTitle">Icona de FoodLogístic S.A</title>
+  <desc id="logoIconDesc">Icona circular amb un camió blau i una fulla verda que simbolitzen logística alimentària.</desc>
+  <defs>
+    <linearGradient id="iconTruckGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0E4C73"/>
+      <stop offset="100%" stop-color="#0A3652"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="32" cy="32" r="30" fill="#E0F2FE"/>
+  <g transform="translate(10,16)">
+    <rect x="2" y="16" width="32" height="14" rx="4" fill="url(#iconTruckGradient)"/>
+    <rect x="22" y="8" width="12" height="12" rx="3" fill="#0E4C73"/>
+    <rect x="24" y="10" width="7" height="7" rx="2" fill="#ffffff" opacity="0.9"/>
+
+    <circle cx="12" cy="32" r="4" fill="#1F2933"/>
+    <circle cx="28" cy="32" r="4" fill="#1F2933"/>
+
+    <circle cx="16" cy="14" r="6" fill="#61A656" opacity="0.95"/>
+    <path d="M13 14c2-2.4 4.4-3.6 6.4-3-0.4 2-1.6 4.4-3.6 6.4-2 2-3.8 3-5.4 3.2 0.2-2 1.2-4 2.6-6.6z" fill="#ffffff" opacity="0.9"/>
+  </g>
+</svg>
