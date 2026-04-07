@@ -1,1 +1,342 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <!-- Meta bàsic i SEO -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodLogístic S.A · Distribució i logística alimentària</title>
+  <meta name="description" content="FoodLogístic S.A és una empresa capdavantera en distribució i logística alimentària per a pimes i clients professionals.">
 
+  <!-- Open Graph per a xarxes socials -->
+  <meta property="og:title" content="FoodLogístic S.A · Distribució i logística alimentària">
+  <meta property="og:description" content="Solucions logístiques alimentàries fiables, flexibles i a mida per a pimes i clients professionals.">
+  <meta property="og:image" content="images/hero.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://[usuari].github.io/[nom-del-repositori]/">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Lexend:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Estils -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Favicon (generat a partir del logo) -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Navegació principal -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#inici" class="logo-link">
+        <img src="images/logo.svg" alt="Logotip de FoodLogístic S.A" class="logo-img">
+      </a>
+
+      <!-- Botó menú mòbil -->
+      <button class="nav-toggle" aria-label="Obrir o tancar el menú de navegació" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav class="main-nav" role="navigation" aria-label="Navegació principal">
+        <ul class="nav-list">
+          <li><a href="#inici">Inici</a></li>
+          <li><a href="#serveis">Serveis</a></li>
+          <li><a href="#sobre-nosaltres">Sobre nosaltres</a></li>
+          <li><a href="#contacte">Contacte</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Secció Inici / Hero -->
+  <!-- Comentari: secció hero amb valor principal, subtítol i CTA -->
+  <main id="inici">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1 id="hero-title">Logística alimentària fiable per al teu negoci</h1>
+          <p class="hero-subtitle">
+            FoodLogístic S.A connecta productors, distribuïdors i punts de venda amb solucions de transport i emmagatzematge
+            eficients, segures i puntuals a tot el territori.
+          </p>
+          <a href="#contacte" class="btn btn-primary">Contacta’ns</a>
+
+          <div class="hero-benefits" aria-label="Beneficis principals">
+            <article class="benefit-item">
+              <div class="benefit-icon" aria-hidden="true">🚚</div>
+              <h3>Distribució nacional</h3>
+              <p>Cobertura a nivell estatal amb rutes optimitzades per reduir temps i costos.</p>
+            </article>
+            <article class="benefit-item">
+              <div class="benefit-icon" aria-hidden="true">❄️</div>
+              <h3>Cadena de fred garantida</h3>
+              <p>Infraestructura adaptada per a productes frescos i refrigerats amb control de temperatura.</p>
+            </article>
+            <article class="benefit-item">
+              <div class="benefit-icon" aria-hidden="true">📊</div>
+              <h3>Traçabilitat i transparència</h3>
+              <p>Seguiment de comandes en temps real i informes per a la teva presa de decisions.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero-image-wrapper">
+          <img src="images/hero.jpg" alt="Camió de logística alimentària en ruta amb productes frescos" class="hero-image">
+        </div>
+      </div>
+    </section>
+
+    <!-- Secció Serveis -->
+    <!-- Comentari: llista de serveis amb icones i CTA secundari -->
+    <section id="serveis" class="section services" aria-labelledby="services-title">
+      <div class="container">
+        <h2 id="services-title">Serveis de logística alimentària</h2>
+        <p class="section-intro">
+          Dissenyem solucions integrals per a pimes i clients professionals, adaptant-nos a les necessitats de cada cadena de subministrament.
+        </p>
+
+        <div class="services-grid" role="list">
+          <article class="service-card" role="listitem">
+            <div class="service-icon" aria-hidden="true">🚛</div>
+            <h3>Transport refrigerat</h3>
+            <p>
+              Xarxa de vehicles equipats amb sistemes de refrigeració per garantir la qualitat dels productes frescos i congelats.
+            </p>
+            <button class="btn btn-secondary" type="button" aria-label="Més informació sobre transport refrigerat">Més informació</button>
+          </article>
+
+          <article class="service-card" role="listitem">
+            <div class="service-icon" aria-hidden="true">🏬</div>
+            <h3>Emmagatzematge i picking</h3>
+            <p>
+              Magatzems especialitzats en alimentació amb processos de picking eficients per preparar comandes amb precisió.
+            </p>
+            <button class="btn btn-secondary" type="button" aria-label="Més informació sobre emmagatzematge i picking">Més informació</button>
+          </article>
+
+          <article class="service-card" role="listitem">
+            <div class="service-icon" aria-hidden="true">⏱️</div>
+            <h3>Distribució d’última milla</h3>
+            <p>
+              Lliuraments flexibles a punts de venda, restaurants i centres de distribució amb franges horàries adaptades.
+            </p>
+            <button class="btn btn-secondary" type="button" aria-label="Més informació sobre distribució d’última milla">Més informació</button>
+          </article>
+
+          <article class="service-card" role="listitem">
+            <div class="service-icon" aria-hidden="true">🔍</div>
+            <h3>Traçabilitat i reporting</h3>
+            <p>
+              Sistemes de traçabilitat que permeten conèixer l’estat de cada enviament i generar informes personalitzats.
+            </p>
+            <button class="btn btn-secondary" type="button" aria-label="Més informació sobre traçabilitat i reporting">Més informació</button>
+          </article>
+
+          <article class="service-card" role="listitem">
+            <div class="service-icon" aria-hidden="true">🤝</div>
+            <h3>Solucions a mida per a pimes</h3>
+            <p>
+              Disseny de rutes, freqüències i serveis adaptats a les necessitats específiques de cada client professional.
+            </p>
+            <button class="btn btn-secondary" type="button" aria-label="Més informació sobre solucions a mida per a pimes">Més informació</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Secció Sobre nosaltres -->
+    <!-- Comentari: missió, visió, valors i credencials -->
+    <section id="sobre-nosaltres" class="section about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-text">
+          <h2 id="about-title">Sobre FoodLogístic S.A</h2>
+          <p>
+            FoodLogístic S.A és una empresa capdavantera en la distribució i logística alimentària a nivell nacional, amb seu a Mataró.
+            Treballem al costat de pimes i clients professionals per garantir que cada producte arribi en perfectes condicions.
+          </p>
+
+          <h3>Missió</h3>
+          <p>
+            Assegurar una cadena de subministrament alimentària eficient, segura i sostenible que connecti productors i punts de venda amb total confiança.
+          </p>
+
+          <h3>Visió</h3>
+          <p>
+            Ser el soci logístic de referència per al sector alimentari, impulsant la innovació i la digitalització en cada etapa del procés.
+          </p>
+
+          <h3>Valors</h3>
+          <ul class="values-list">
+            <li><strong>Compromís amb la qualitat:</strong> prioritzem la seguretat alimentària i el compliment normatiu.</li>
+            <li><strong>Proximitat amb el client:</strong> escoltem i adaptem els serveis a cada realitat empresarial.</li>
+            <li><strong>Sostenibilitat:</strong> optimitzem rutes i recursos per reduir l’impacte ambiental.</li>
+          </ul>
+
+          <p class="credentials">
+            <strong>+15 anys d’experiència</strong> en logística alimentària · <strong>+300 clients actius</strong> ·
+            Col·laboracions amb cadenes de supermercats i distribuïdors de referència.
+          </p>
+        </div>
+
+        <div class="about-image-wrapper">
+          <img src="images/team.jpg" alt="Equip professional de FoodLogístic S.A en un magatzem logístic" class="about-image">
+        </div>
+      </div>
+    </section>
+
+    <!-- Secció Contacte -->
+    <!-- Comentari: formulari de contacte amb validació HTML5 i missatge d’èxit via JS -->
+    <section id="contacte" class="section contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-form-wrapper">
+          <h2 id="contact-title">Contacte</h2>
+          <p>
+            Explica’ns les necessitats logístiques del teu negoci i t’oferirem una proposta adaptada.
+          </p>
+
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="nom">Nom <span class="required-indicator" aria-hidden="true">*</span></label>
+              <input type="text" id="nom" name="nom" required aria-required="true">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Correu electrònic <span class="required-indicator" aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" required aria-required="true">
+            </div>
+
+            <div class="form-group">
+              <label for="telefon">Telèfon de contacte <span class="required-indicator" aria-hidden="true">*</span></label>
+              <input
+                type="tel"
+                id="telefon"
+                name="telefon"
+                required
+                aria-required="true"
+                pattern="^[0-9+\s()-]{6,20}$"
+                aria-describedby="telefon-help"
+              >
+              <small id="telefon-help" class="field-help">
+                Accepta dígits, espais i símbols + ( ) -.
+              </small>
+            </div>
+
+            <div class="form-group">
+              <label for="missatge">Missatge <span class="required-indicator" aria-hidden="true">*</span></label>
+              <textarea id="missatge" name="missatge" rows="4" required aria-required="true"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+
+            <p id="form-success" class="form-success" role="status" aria-live="polite" hidden>
+              Gràcies, ens posarem en contacte aviat.
+            </p>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <h3>Dades de contacte</h3>
+          <ul class="contact-list">
+            <li><strong>Correu:</strong> <a href="mailto:info@foodlogistic-sa.com">info@foodlogistic-sa.com</a></li>
+            <li><strong>Telèfon:</strong> <a href="tel:+34930000000">+34 93 000 00 00</a></li>
+            <li><strong>Adreça:</strong> Polígon Industrial, 08302 Mataró, Barcelona</li>
+          </ul>
+
+          <h3>Ubicació</h3>
+          <div class="map-wrapper" aria-label="Mapa de la ubicació de FoodLogístic S.A">
+            <!-- Mapa incrustat opcional (placeholder de Google Maps) -->
+            <iframe
+              title="Mapa de FoodLogístic S.A a Mataró"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.0000000000005!2d2.444!3d41.538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDF°MzInMTYuOCJOIDIuMjYnMzguNCJF!5e0!3m2!1sca!2ses!4v1700000000000"
+              width="100%"
+              height="250"
+              style="border:0;"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Peu de pàgina -->
+  <!-- Comentari: footer amb enllaços ràpids, xarxes socials i menció a README -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-column">
+        <img src="images/logo-icon.svg" alt="Icona del logotip de FoodLogístic S.A" class="footer-logo-icon">
+        <p class="footer-text">
+          Solucions de distribució i logística alimentària per a pimes i clients professionals a tot el territori.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Enllaços ràpids</h3>
+        <ul class="footer-links">
+          <li><a href="#serveis">Serveis</a></li>
+          <li><a href="#sobre-nosaltres">Sobre nosaltres</a></li>
+          <li><a href="#contacte">Contacte</a></li>
+          <li><a href="../README.md">README del projecte</a></li>
+          <li><a href="#politica-privacitat">Política de privacitat</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Xarxes socials</h3>
+        <ul class="footer-links">
+          <li><a href="#" aria-label="Perfil de FoodLogístic S.A a LinkedIn">LinkedIn</a></li>
+          <li><a href="#" aria-label="Perfil de FoodLogístic S.A a Twitter">X (Twitter)</a></li>
+          <li><a href="#" aria-label="Perfil de FoodLogístic S.A a Instagram">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p id="politica-privacitat" class="privacy-text">
+        <strong>Política de privacitat:</strong> les dades recollides mitjançant el formulari de contacte s’utilitzen exclusivament per respondre
+        a la teva sol·licitud i no es comparteixen amb tercers, d’acord amb la normativa vigent de protecció de dades.
+      </p>
+      <p class="copyright">
+        &copy; <span id="current-year"></span> FoodLogístic S.A · Tots els drets reservats.
+      </p>
+    </div>
+  </footer>
+
+  <!-- JavaScript bàsic per a menú mòbil i missatge d’èxit del formulari -->
+  <script>
+    // Actualitzar any actual al footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Menú hamburguesa
+    const navToggle = document.querySelector('.nav-toggle');
+    const mainNav = document.querySelector('.main-nav');
+
+    navToggle.addEventListener('click', () => {
+      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!isExpanded));
+      mainNav.classList.toggle('nav-open');
+    });
+
+    // Formulari de contacte: missatge d’èxit simulat
+    const contactForm = document.getElementById('contact-form');
+    const formSuccess = document.getElementById('form-success');
+
+    contactForm.addEventListener('submit', (event) => {
+      if (!contactForm.checkValidity()) {
+        // Deixem que el navegador mostri els missatges d’error HTML5
+        return;
+      }
+      event.preventDefault();
+      formSuccess.hidden = false;
+      contactForm.reset();
+    });
+  </script>
+
+  <!-- Marcador per al codi d’analítica (Statcounter) -->
+  <!-- STATCOUNTER_SNIPPET_AQUI -->
+</body>
+</html>
