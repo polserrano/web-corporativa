@@ -290,7 +290,7 @@
                     <button onclick="openModal('modal-cookies')" class="hover:text-brand-green transition-colors">Política de Cookies</button>
                 </div>
             </div>
-            <p class="text-center text-gray-700 text-[10px] mt-10 tracking-[0.3em]">© 2024 FOODLOGISTICS S.A. — TOTS ELS DRETS RESERVATS</p>
+            <p class="text-center text-gray-700 text-[10px] mt-10 tracking-[0.3em]">© 2026 FOODLOGISTICS S.A. — TOTS ELS DRETS RESERVATS</p>
         </div>
     </footer>
 
@@ -332,21 +332,132 @@
     </div>
 
     <!-- Modals (Bàsics per a demostració) -->
-    <div id="modal-cookies" class="fixed inset-0 z-[110] flex items-center justify-center p-4 hidden">
-        <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="closeModal('modal-cookies')"></div>
-        <div class="glass max-w-2xl w-full p-10 relative z-10">
-            <h2 class="text-3xl font-black mb-6 italic uppercase text-brand-green">Política de Cookies</h2>
-            <div class="text-gray-400 text-sm space-y-4">
-                <p>Aquesta web utilitza cookies per a:</p>
-                <ul class="list-disc pl-5">
-                    <li>Garantir el funcionament tècnic del lloc.</li>
-                    <li>Analitzar el trànsit de forma anònima.</li>
-                    <li>Personalitzar la publicitat segons els teus interessos.</li>
-                </ul>
+    
+    <div id="modal-avis" class="fixed inset-0 z-[110] flex items-center justify-center p-4 hidden">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="closeModal('modal-avis')"></div>
+        <div class="glass max-w-3xl w-full max-h-[80vh] flex flex-col relative z-10 overflow-hidden border-white/10">
+            <div class="p-8 border-b border-white/10 flex justify-between items-center bg-brand-dark/50">
+                <h2 class="text-3xl font-black italic uppercase text-brand-green">Avís Legal</h2>
+                <button onclick="closeModal('modal-avis')" class="text-gray-500 hover:text-white transition-colors text-2xl">&times;</button>
             </div>
-            <button onclick="closeModal('modal-cookies')" class="mt-8 bg-brand-green px-6 py-2 rounded-lg font-bold text-xs uppercase">Tancar</button>
+            <div class="p-8 overflow-y-auto text-gray-400 text-sm space-y-6 leading-relaxed custom-scrollbar">
+                <section>
+                    <h3 class="text-white font-bold uppercase mb-2">1. Dades Identificatives</h3>
+                    <p>En compliment de l'article 10 de la Llei 34/2002, de 11 de juliol, de Serveis de la Societat de la Informació i Comerç Electrònic (LSSI-CE), s'exposen les següents dades:</p>
+                    <ul class="list-none space-y-1 mt-2">
+                        <li><strong class="text-gray-300">Denominació Social:</strong> FoodLogistics S.A.</li>
+                        <li><strong class="text-gray-300">NIF:</strong> A-60000000</li>
+                        <li><strong class="text-gray-300">Domicili:</strong> Mataró Logistics Hub, Polígon Industrial, 08304 Mataró (Barcelona)</li>
+                        <li><strong class="text-gray-300">Correu electrònic:</strong> legal@foodlogistics.cat</li>
+                        <li><strong class="text-gray-300">Inscripció:</strong> Registre Mercantil de Barcelona, Tom 45.000, Foli 120, Full B-450000.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3 class="text-white font-bold uppercase mb-2">2. Propietat Intel·lectual</h3>
+                    <p>Tots els continguts d'aquest lloc web, incloent-hi textos, gràfics, logotips, icones de botons, imatges, clips d'àudio i programari, són propietat de FoodLogistics S.A. o dels seus proveïdors de contingut i estan protegits per les normes nacionals i internacionals de propietat industrial i intel·lectual.</p>
+                </section>
+                <section>
+                    <h3 class="text-white font-bold uppercase mb-2">3. Responsabilitat</h3>
+                    <p>FoodLogistics S.A. no es fa responsable dels danys i perjudicis de qualsevol naturalesa que poguessin ocasionar, a títol enunciatiu: errors o omissions en els continguts, falta de disponibilitat del portal o la transmissió de virus o programes maliciosos, malgrat haver adoptat totes les mesures tecnològiques necessàries per evitar-ho.</p>
+                </section>
+                <section>
+                    <h3 class="text-white font-bold uppercase mb-2">4. Legislació Aplicable</h3>
+                    <p>La relació entre FoodLogistics S.A. i l'Usuari es regirà per la normativa espanyola vigent i qualsevol controvèrsia se sotmetrà als Jutjats i Tribunals de la ciutat de Mataró.</p>
+                </section>
+            </div>
+            <div class="p-6 border-t border-white/10 bg-brand-dark/50">
+                <button onclick="closeModal('modal-avis')" class="w-full bg-brand-green py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:brightness-110 transition-all">Entès</button>
+            </div>
         </div>
     </div>
+
+    <div id="modal-privadesa" class="fixed inset-0 z-[110] flex items-center justify-center p-4 hidden">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="closeModal('modal-privadesa')"></div>
+        <div class="glass max-w-3xl w-full max-h-[80vh] flex flex-col relative z-10 overflow-hidden border-white/10">
+            <div class="p-8 border-b border-white/10 flex justify-between items-center bg-brand-dark/50">
+                <h2 class="text-3xl font-black italic uppercase text-brand-green">Privadesa</h2>
+                <button onclick="closeModal('modal-privadesa')" class="text-gray-500 hover:text-white transition-colors text-2xl">&times;</button>
+            </div>
+            <div class="p-8 overflow-y-auto text-gray-400 text-sm space-y-6 leading-relaxed custom-scrollbar">
+                <section>
+                    <h3 class="text-white font-bold uppercase mb-2">Responsable del Tractament</h3>
+                    <p>FoodLogistics S.A., amb domicili a Mataró, és el responsable del tractament de les teves dades personals recollides a través d'aquest formulari de contacte i de la navegació.</p>
+                </section>
+                <section>
+                    <h3 class="text-white font-bold uppercase mb-2">Finalitat del Tractament</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-xs">
+                        <li>Gestionar les sol·licituds d'informació a través del formulari de contacte.</li>
+                        <li>Enviament de comunicacions comercials sobre els nostres serveis logístics (només amb el teu consentiment).</li>
+                        <li>Millorar l'experiència de l'usuari mitjançant l'anàlisi de navegació.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3 class="text-white font-bold uppercase mb-2">Legitimació</h3>
+                    <p>El tractament es basa en el consentiment de l'interessat en marcar la casella d'acceptació de la política de privadesa en el nostre formulari.</p>
+                </section>
+                <section>
+                    <h3 class="text-white font-bold uppercase mb-2">Drets de l'Usuari</h3>
+                    <p>Tens dret a accedir, rectificar i suprimir les teves dades, així com altres drets (portabilitat i limitació), enviant un correu electrònic a <span class="text-brand-green">privacy@foodlogistics.cat</span> adjuntant una còpia del teu DNI per verificar la identitat.</p>
+                </section>
+                <section>
+                    <h3 class="text-white font-bold uppercase mb-2">Conservació</h3>
+                    <p>Les dades es conservaran durant el temps necessari per complir amb la finalitat per a la qual es van recollir i per determinar les possibles responsabilitats que se'n poguessin derivar.</p>
+                </section>
+            </div>
+            <div class="p-6 border-t border-white/10 bg-brand-dark/50">
+                <button onclick="closeModal('modal-privadesa')" class="w-full bg-brand-green py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:brightness-110 transition-all">Acceptar i tancar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-cookies" class="fixed inset-0 z-[110] flex items-center justify-center p-4 hidden">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="closeModal('modal-cookies')"></div>
+        <div class="glass max-w-3xl w-full max-h-[80vh] flex flex-col relative z-10 overflow-hidden border-white/10">
+            <div class="p-8 border-b border-white/10 flex justify-between items-center bg-brand-dark/50">
+                <h2 class="text-3xl font-black italic uppercase text-brand-green">Cookies</h2>
+                <button onclick="closeModal('modal-cookies')" class="text-gray-500 hover:text-white transition-colors text-2xl">&times;</button>
+            </div>
+            <div class="p-8 overflow-y-auto text-gray-400 text-sm space-y-6 leading-relaxed custom-scrollbar">
+                <p>En aquesta web utilitzem cookies per millorar el rendiment i la teva experiència com a usuari. A continuació t'expliquem quines tipologies fem servir:</p>
+                
+                <div class="space-y-4">
+                    <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                        <h4 class="text-white font-bold text-xs uppercase mb-1">Cookies Tècniques (Obligatòries)</h4>
+                        <p class="text-[11px]">Són aquelles que permeten a l'usuari la navegació a través de la pàgina web i l'ús de les diferents opcions o serveis que en ella existeixen com, per exemple, controlar el trànsit i la comunicació de dades.</p>
+                    </div>
+                    
+                    <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                        <h4 class="text-white font-bold text-xs uppercase mb-1">Cookies d'Anàlisi</h4>
+                        <p class="text-[11px]">Permeten quantificar el nombre d'usuaris i així realitzar el mesurament i anàlisi estadística de la utilització que fan els usuaris del servei ofert. Per això s'analitza la teva navegació a la nostra pàgina web amb la finalitat de millorar l'oferta de productes o serveis que t'oferim.</p>
+                    </div>
+
+                    <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                        <h4 class="text-white font-bold text-xs uppercase mb-1">Cookies de Màrqueting</h4>
+                        <p class="text-[11px]">Són aquelles que, tractades per nosaltres o per tercers, ens permeten gestionar de la forma més eficaç possible l'oferta dels espais publicitaris que hi ha a la pàgina web, adequant el contingut de l'anunci al contingut del servei sol·licitat.</p>
+                    </div>
+                </div>
+
+                <p class="text-xs">Pots desactivar les cookies en qualsevol moment a través de la configuració del teu navegador (Chrome, Firefox, Safari, etc.). Tingues en compte que la desactivació de algunes cookies pot afectar el correcte funcionament del lloc.</p>
+            </div>
+            <div class="p-6 border-t border-white/10 bg-brand-dark/50">
+                <button onclick="closeModal('modal-cookies')" class="w-full bg-brand-green py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:brightness-110 transition-all">Configurar preferències</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Estil per a la barra de scroll dels modals */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: var(--brand-green);
+            border-radius: 10px;
+        }
+    </style>
 
     <script>
         // Animacions al scroll
