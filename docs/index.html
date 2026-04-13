@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FoodLogistics S.A. | Excel·lència Visual 360°</title>
+    <title>FoodLogistics S.A. | Excel·lència Logística 360°</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -23,8 +23,7 @@
 
         .text-brand-green { color: var(--brand-green); }
         .bg-brand-green { background-color: var(--brand-green); }
-       
-        /* Efecte de vidre avançat */
+        
         .glass {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(15px);
@@ -49,7 +48,6 @@
             transform: translateY(0);
         }
 
-        /* Gradient de fons animat */
         .bg-glow {
             position: fixed;
             width: 800px;
@@ -58,17 +56,15 @@
             border-radius: 50%;
             z-index: -1;
             pointer-events: none;
-            transition: transform 0.2s ease-out;
         }
 
-        /* Bento Grid amb imatges */
         .bento-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(2, 280px);
             gap: 1.5rem;
         }
-       
+        
         .bento-item {
             position: relative;
             overflow: hidden;
@@ -79,52 +75,60 @@
 
         .bento-item img {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.3;
-            transition: all 0.6s ease;
-            filter: grayscale(100%);
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; opacity: 0.3;
+            transition: all 0.6s ease; filter: grayscale(100%);
         }
 
         .bento-item:hover img {
-            opacity: 0.5;
-            filter: grayscale(0%);
-            transform: scale(1.1);
+            opacity: 0.5; filter: grayscale(0%); transform: scale(1.1);
         }
 
         .bento-content {
-            position: relative;
-            z-index: 2;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 2.5rem;
-            background: linear-gradient(to top, rgba(7, 11, 20, 0.9), transparent);
+            position: relative; z-index: 2; height: 100%;
+            display: flex; flex-direction: column; justify-content: flex-end;
+            padding: 2.5rem; background: linear-gradient(to top, rgba(7, 11, 20, 0.9), transparent);
         }
 
         .btn-action {
             box-shadow: 0 10px 30px rgba(99, 166, 69, 0.3);
             transition: all 0.3s ease;
         }
-        .btn-action:hover {
-            box-shadow: 0 15px 40px rgba(99, 166, 69, 0.5);
-            transform: translateY(-3px);
+
+        /* Estils del Formulari */
+        .form-input {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.25rem;
+            border-radius: 1rem;
+            width: 100%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: var(--brand-green);
+            background: rgba(255, 255, 255, 0.06);
         }
 
-        .img-mask {
-            mask-image: radial-gradient(circle, black 50%, transparent 100%);
+        /* Toggle Switch per a Cookies */
+        .switch {
+            position: relative; display: inline-block; width: 44px; height: 24px;
         }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider {
+            position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #334155; transition: .4s; border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px;
+            background-color: white; transition: .4s; border-radius: 50%;
+        }
+        input:checked + .slider { background-color: var(--brand-green); }
+        input:checked + .slider:before { transform: translateX(20px); }
 
         @media (max-width: 768px) {
-            .bento-grid {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto;
-            }
-            .section-full { padding: 4rem 1rem; }
+            .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -135,7 +139,7 @@
 
     <!-- Navegació -->
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl">
-        <div class="glass px-10 py-5 flex justify-between items-center border-white/10">
+        <div class="glass px-6 md:px-10 py-5 flex justify-between items-center border-white/10">
             <div class="flex items-center gap-3">
                 <div class="w-10 h-10 bg-brand-green rounded-xl flex items-center justify-center rotate-3 shadow-lg shadow-green-900/20">
                     <i class="fas fa-shipping-fast text-white"></i>
@@ -145,207 +149,204 @@
             <div class="hidden md:flex gap-10 font-bold text-xs uppercase tracking-[0.2em] text-gray-400">
                 <a href="#inici" class="hover:text-brand-green transition-colors">Inici</a>
                 <a href="#serveis" class="hover:text-brand-green transition-colors">Serveis</a>
-                <a href="#nosaltres" class="hover:text-brand-green transition-colors">Nosaltres</a>
+                <a href="#contacte" class="hover:text-brand-green transition-colors">Contacte</a>
             </div>
-            <a href="#contacte" class="bg-brand-green text-white px-8 py-3 rounded-full font-black text-xs hover:bg-white hover:text-brand-dark transition-all duration-300">PARLEM?</a>
+            <a href="#contacte" class="bg-brand-green text-white px-8 py-3 rounded-full font-black text-xs hover:bg-white hover:text-brand-dark transition-all duration-300 uppercase">Parlem?</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="inici" class="section-full relative overflow-hidden">
         <div class="absolute inset-0 z-0 opacity-20">
-            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80" alt="Magatzem logístic" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=2000&q=80" alt="Logística" class="w-full h-full object-cover">
         </div>
-       
         <div class="max-w-7xl mx-auto px-4 w-full grid lg:grid-cols-2 gap-16 items-center relative z-10">
             <div class="animate__animated animate__fadeInLeft">
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green/10 border border-brand-green/20 text-brand-green text-xs font-bold mb-8 uppercase tracking-widest">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-green opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-green"></span>
-                    </span>
-                    Operacions en temps real
+                    Operacions 24/7 en temps real
                 </div>
-                <h1 class="text-6xl md:text-9xl font-black leading-[0.85] mb-10">
-                    SENSE <br><span class="text-brand-green">FALSES</span> <br>PROMESES.
-                </h1>
-                <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-lg leading-relaxed">
-                    15 anys movent el que més importa: la confiança dels teus clients. Logística refrigerada d'alta precisió per a mercats exigents.
-                </p>
+                <h1 class="text-6xl md:text-9xl font-black leading-[0.85] mb-10">SENSE <br><span class="text-brand-green">FALSES</span> <br>PROMESES.</h1>
+                <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-lg leading-relaxed">Logística refrigerada d'alta precisió per a mercats exigents. Movent la confiança de més de 450 clients a Europa.</p>
                 <div class="flex flex-wrap gap-6">
                     <a href="#contacte" class="btn-action bg-brand-green text-white px-12 py-6 rounded-2xl font-black uppercase tracking-widest text-sm">Activar Logística</a>
-                    <div class="flex items-center gap-4 px-6 py-4 glass border-white/5">
-                        <div class="flex -space-x-3">
-                            <img src="https://i.pravatar.cc/100?u=1" class="w-10 h-10 rounded-full border-2 border-brand-dark" alt="Client 1">
-                            <img src="https://i.pravatar.cc/100?u=2" class="w-10 h-10 rounded-full border-2 border-brand-dark" alt="Client 2">
-                            <img src="https://i.pravatar.cc/100?u=3" class="w-10 h-10 rounded-full border-2 border-brand-dark" alt="Client 3">
-                        </div>
-                        <span class="text-xs font-bold text-gray-400">+450 Clients actius</span>
-                    </div>
                 </div>
             </div>
-           
             <div class="relative animate__animated animate__fadeInRight hidden lg:block">
                 <div class="relative z-10 p-4 glass rotate-2 border-white/10 group overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Camió FoodLogistics" class="rounded-[2rem] w-full h-[600px] object-cover transition-transform duration-1000 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 to-transparent"></div>
+                    <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1200&q=80" alt="Camió" class="rounded-[2rem] w-full h-[600px] object-cover">
                 </div>
-                <!-- Element decoratiu -->
-                <div class="absolute top-1/2 -right-12 w-48 h-48 bg-brand-green/20 rounded-full blur-3xl"></div>
             </div>
         </div>
     </section>
 
-    <!-- Bento Serveis amb Imatges -->
+    <!-- Serveis -->
     <section id="serveis" class="py-32 bg-white/[0.02]">
-        <div class="max-w-7xl mx-auto px-4 w-full">
-            <div class="max-w-3xl mb-24 reveal">
-                <h2 class="text-5xl md:text-7xl font-black mb-8 leading-tight">SOLUCIONS <br><span class="text-brand-green italic">D'ALTA DENSITAT</span></h2>
-                <p class="text-gray-500 text-xl">Integració total en la teva cadena de valor amb tecnologia propietària.</p>
-            </div>
-
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-5xl md:text-7xl font-black mb-16 reveal">SOLUCIONS <br><span class="text-brand-green italic">AVANÇADES</span></h2>
             <div class="bento-grid">
-                <!-- Gran 1 -->
-                <div class="bento-item col-span-2 row-span-2 reveal">
-                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Tecnologia de control">
+                <div class="bento-item col-span-2 row-span-2 reveal glass p-10">
                     <div class="bento-content">
-                        <div class="mb-auto">
-                            <span class="bg-brand-green text-white text-[10px] font-black px-3 py-1 rounded-full uppercase">Tecnologia</span>
-                        </div>
-                        <h3 class="text-3xl font-black mb-2 text-white">Smart Cold Control</h3>
-                        <p class="text-gray-400 text-sm max-w-xs leading-relaxed">Monitorització quàntica de la temperatura amb un marge d'error de ±0.1°C.</p>
+                        <h3 class="text-3xl font-black mb-4">Smart Cold Control</h3>
+                        <p class="text-gray-400">Monitorització quàntica de la temperatura per a la màxima seguretat alimentària.</p>
                     </div>
+                    <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=800&q=80" alt="Control">
                 </div>
-
-                <!-- Petit 1 -->
-                <div class="bento-item col-span-2 reveal" style="transition-delay: 0.2s;">
-                    <img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaad5b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Flota de camions">
+                <div class="bento-item col-span-2 reveal glass p-10">
                     <div class="bento-content">
-                        <h3 class="text-2xl font-black mb-1">Última Milla Express</h3>
-                        <p class="text-gray-400 text-xs">Distribució capil·lar urbana en menys de 4 hores.</p>
+                        <h3 class="text-2xl font-black mb-2">Última Milla</h3>
+                        <p class="text-gray-400">Entrega capil·lar urbana sense trencament de fred.</p>
                     </div>
                 </div>
-
-                <!-- Quadrat 1 -->
-                <div class="bento-item reveal" style="transition-delay: 0.4s;">
-                    <img src="https://images.unsplash.com/photo-1591336395442-999335f63d04?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Seguretat">
-                    <div class="bento-content items-center text-center">
-                        <i class="fas fa-shield-virus text-brand-green text-3xl mb-4"></i>
-                        <h4 class="font-black text-sm uppercase tracking-tighter">Higiene Total</h4>
+                <div class="bento-item reveal glass p-10">
+                    <div class="bento-content text-center">
+                        <h4 class="text-brand-green font-black text-4xl mb-2">+450</h4>
+                        <p class="text-[10px] uppercase font-bold tracking-widest">Clients</p>
                     </div>
                 </div>
-
-                <!-- Quadrat 2 -->
-                <div class="bento-item reveal" style="transition-delay: 0.6s;">
-                    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Eficiència">
-                    <div class="bento-content items-center text-center">
-                        <i class="fas fa-bolt text-brand-green text-3xl mb-4"></i>
-                        <h4 class="font-black text-sm uppercase tracking-tighter">Eficiència A+</h4>
+                <div class="bento-item reveal glass p-10">
+                    <div class="bento-content text-center">
+                        <h4 class="text-brand-green font-black text-4xl mb-2">24h</h4>
+                        <p class="text-[10px] uppercase font-bold tracking-widest">Suport</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Nosaltres amb Imatge Immersiva -->
-    <section id="nosaltres" class="section-full">
-        <div class="max-w-7xl mx-auto px-4 w-full">
-            <div class="grid lg:grid-cols-2 gap-24 items-center">
-                <div class="reveal">
-                    <h2 class="text-5xl md:text-7xl font-black mb-10 leading-none">MÉS QUE <br><span class="text-brand-green">LOGÍSTICA</span></h2>
-                    <div class="space-y-8 text-gray-400 text-lg">
-                        <p>Des de la nostra fundació fa 15 anys, hem entès que darrere de cada palet hi ha un compromís amb la salut del consumidor final.</p>
-                        <p class="border-l-4 border-brand-green pl-8 italic">"No transportem caixes, transportem aliments que alimenten famílies. Aquesta és la nostra responsabilitat."</p>
-                        <div class="pt-8 grid grid-cols-2 gap-10">
-                            <div>
-                                <p class="text-white text-4xl font-black mb-2">1.2M</p>
-                                <p class="text-xs font-bold uppercase tracking-widest text-brand-green">Km recorreguts/any</p>
+    <!-- Secció de Contacte -->
+    <section id="contacte" class="py-32 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="grid lg:grid-cols-5 gap-16 items-start">
+                
+                <!-- Informació de contacte -->
+                <div class="lg:col-span-2 reveal">
+                    <h2 class="text-5xl md:text-7xl font-black mb-10 leading-none">CONNECTA <br><span class="text-brand-green italic">AMB NOSALTRES</span></h2>
+                    <p class="text-gray-400 text-lg mb-12 max-w-sm">Estem preparats per optimitzar la teva cadena de subministrament. Resposta garantida en menys de 2 hores laborables.</p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-center gap-6 group">
+                            <div class="w-14 h-14 glass flex items-center justify-center text-brand-green group-hover:bg-brand-green group-hover:text-white transition-all duration-500">
+                                <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
-                                <p class="text-white text-4xl font-black mb-2">99.8%</p>
-                                <p class="text-xs font-bold uppercase tracking-widest text-brand-green">Puntualitat</p>
+                                <p class="text-[10px] uppercase font-bold text-gray-500 tracking-widest">Seu Central</p>
+                                <p class="text-white font-bold italic">Mataró Logistics Hub, BCN</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-6 group">
+                            <div class="w-14 h-14 glass flex items-center justify-center text-brand-green group-hover:bg-brand-green group-hover:text-white transition-all duration-500">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] uppercase font-bold text-gray-500 tracking-widest">Atenció Directa</p>
+                                <p class="text-white font-bold italic">+34 937 123 456</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="reveal relative" style="transition-delay: 0.3s;">
-                    <div class="glass p-3 rounded-[3.5rem] border-white/5">
-                        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Equip humà" class="rounded-[3rem] w-full h-[650px] object-cover grayscale hover:grayscale-0 transition-all duration-1000">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contacte -->
-    <section id="contacte" class="section-full relative overflow-hidden">
-        <!-- Fons amb imatge enfosquida -->
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1454165833767-027ffea9e7a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80" class="w-full h-full object-cover opacity-10">
-        </div>
-
-        <div class="max-w-7xl mx-auto px-4 w-full relative z-10">
-            <div class="glass p-10 md:p-20 border-white/10 overflow-hidden relative">
-                <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-green opacity-[0.03] skew-x-12 translate-x-32 pointer-events-none"></div>
-               
-                <div class="grid lg:grid-cols-2 gap-20">
-                    <div class="reveal">
-                        <h2 class="text-6xl font-black mb-8">EL TEU FUTUR <br><span class="text-brand-green">LOGÍSTIC</span></h2>
-                        <p class="text-gray-400 mb-12 text-lg">Estàs a un formulari de distància d'optimitzar els teus costos i millorar la qualitat del teu servei.</p>
-                       
-                        <div class="space-y-8">
-                            <div class="flex gap-6 items-center">
-                                <div class="w-14 h-14 rounded-2xl bg-brand-green/20 flex items-center justify-center text-brand-green text-xl"><i class="fas fa-map-marker-alt"></i></div>
-                                <div>
-                                    <p class="text-xs font-bold text-gray-500 uppercase">Seu Central</p>
-                                    <p class="text-white font-bold">Carrer de la Teixidora, núm. 13, 08302.</p>
-                                </div>
+                <!-- Formulari -->
+                <div class="lg:col-span-3 reveal">
+                    <div class="glass p-8 md:p-12 border-white/5 relative">
+                        <form id="contact-form" class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase font-black tracking-widest text-gray-500 ml-2 italic">Nom complet</label>
+                                <input type="text" placeholder="Joan Pou" class="form-input" required>
                             </div>
-                            <div class="flex gap-6 items-center">
-                                <div class="w-14 h-14 rounded-2xl bg-brand-blue/20 flex items-center justify-center text-brand-blue text-xl"><i class="fas fa-phone"></i></div>
-                                <div>
-                                    <p class="text-xs font-bold text-gray-500 uppercase">Contacte Directe</p>
-                                    <p class="text-white font-bold">+34 935 55 55 55</p>
-                                </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] uppercase font-black tracking-widest text-gray-500 ml-2 italic">Correu electrònic</label>
+                                <input type="email" placeholder="jpou@empresa.cat" class="form-input" required>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="reveal" style="transition-delay: 0.2s;">
-                        <form id="contact-form" onsubmit="handleSend(event)" class="space-y-6">
-                            <div class="grid grid-cols-2 gap-6">
-                                <input type="text" placeholder="Nom" required class="w-full px-6 py-5 rounded-2xl glass focus:bg-white/10 outline-none border-0 transition-all">
-                                <input type="email" placeholder="Email" required class="w-full px-6 py-5 rounded-2xl glass focus:bg-white/10 outline-none border-0 transition-all">
+                            <div class="md:col-span-2 space-y-2">
+                                <label class="text-[10px] uppercase font-black tracking-widest text-gray-500 ml-2 italic">El teu missatge</label>
+                                <textarea rows="4" placeholder="Com et podem ajudar?" class="form-input resize-none" required></textarea>
                             </div>
-                            <input type="tel" placeholder="Telèfon de contacte" required class="w-full px-6 py-5 rounded-2xl glass focus:bg-white/10 outline-none border-0 transition-all">
-                            <textarea rows="4" placeholder="Explica'ns el teu projecte..." required class="w-full px-6 py-5 rounded-2xl glass focus:bg-white/10 outline-none border-0 transition-all"></textarea>
-                            <button class="w-full bg-brand-green text-white py-6 rounded-2xl font-black uppercase tracking-widest btn-action">Enviar Sol·licitud</button>
+                            <div class="md:col-span-2 flex items-center gap-4 mb-4">
+                                <input type="checkbox" id="terms" class="accent-brand-green w-4 h-4" required>
+                                <label for="terms" class="text-xs text-gray-500">Accepto la política de privadesa.</label>
+                            </div>
+                            <div class="md:col-span-2">
+                                <button type="submit" class="w-full bg-brand-green text-white py-5 rounded-2xl font-black uppercase tracking-[0.2em] text-sm hover:brightness-110 btn-action transition-all">Enviar sol·licitud</button>
+                            </div>
                         </form>
-                        <div id="success-msg" class="hidden glass p-10 text-center animate__animated animate__fadeIn">
-                            <i class="fas fa-check-circle text-brand-green text-5xl mb-6"></i>
-                            <h3 class="text-2xl font-black mb-2 text-white">MISSATGE ENVIAT!</h3>
-                            <p class="text-gray-400">El nostre equip de rutes et trucarà en breu.</p>
-                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-20 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-10">
-            <div class="flex items-center gap-3 opacity-50">
-                <div class="w-8 h-8 bg-brand-green rounded-lg flex items-center justify-center text-white"><i class="fas fa-cube text-xs"></i></div>
-                <span class="font-black text-sm uppercase">FoodLogistics S.A.</span>
+    <!-- Peu de pàgina -->
+    <footer class="py-20 border-t border-white/5 relative z-10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-10">
+                <div class="flex items-center gap-3 opacity-50">
+                    <div class="w-8 h-8 bg-brand-green rounded-lg flex items-center justify-center text-white"><i class="fas fa-cube text-xs"></i></div>
+                    <span class="font-black text-sm uppercase italic">Food<span class="text-brand-green">Logistics</span></span>
+                </div>
+                <div class="flex flex-wrap justify-center gap-8 text-[10px] uppercase tracking-widest text-gray-500 font-bold">
+                    <button onclick="openModal('modal-avis')" class="hover:text-brand-green transition-colors">Avís Legal</button>
+                    <button onclick="openModal('modal-privadesa')" class="hover:text-brand-green transition-colors">Política de Privadesa</button>
+                    <button onclick="openModal('modal-cookies')" class="hover:text-brand-green transition-colors">Política de Cookies</button>
+                </div>
             </div>
-            <p class="text-gray-600 text-[10px] uppercase tracking-[0.4em]">Barcelona — Madrid — València — Brussel·les</p>
-            <div class="flex gap-8 text-gray-500">
-                <a href="#" class="hover:text-brand-green transition"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="hover:text-brand-green transition"><i class="fab fa-instagram"></i></a>
-            </div>
+            <p class="text-center text-gray-700 text-[10px] mt-10 tracking-[0.3em]">© 2024 FOODLOGISTICS S.A. — TOTS ELS DRETS RESERVATS</p>
         </div>
     </footer>
+
+    <!-- BANNER DE COOKIES (NOU) -->
+    <div id="cookie-banner" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] w-[92%] max-w-4xl hidden animate__animated animate__fadeInUp">
+        <div class="glass p-6 md:p-8 border-brand-green/20 shadow-2xl relative overflow-hidden bg-brand-dark/90">
+            <div class="flex flex-col lg:flex-row gap-8 items-center">
+                <div class="flex-1">
+                    <h4 class="text-white font-black text-lg uppercase mb-2 flex items-center gap-3 italic">
+                        <i class="fas fa-cookie-bite text-brand-green"></i> 
+                        Configuració de Cookies
+                    </h4>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-6">
+                        Utilitzem cookies pròpies i de tercers per millorar la teva experiència. Pots acceptar-les totes o configurar les teves preferències. 
+                        Més info a la nostra <button onclick="openModal('modal-cookies')" class="text-brand-green underline italic">Política de Cookies</button>.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="flex items-center justify-between p-3 bg-white/5 rounded-xl border border-white/5">
+                            <span class="text-[9px] font-bold uppercase tracking-wider text-gray-300">Tècniques</span>
+                            <label class="switch scale-75 opacity-50"><input type="checkbox" checked disabled><span class="slider"></span></label>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-white/5 rounded-xl border border-white/5">
+                            <span class="text-[9px] font-bold uppercase tracking-wider text-gray-300">Analítiques</span>
+                            <label class="switch scale-75"><input type="checkbox" id="cookie-analytics" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-white/5 rounded-xl border border-white/5 hidden md:flex">
+                            <span class="text-[9px] font-bold uppercase tracking-wider text-gray-300">Màrqueting</span>
+                            <label class="switch scale-75"><input type="checkbox" id="cookie-marketing"><span class="slider"></span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-3 w-full lg:w-48 shrink-0">
+                    <button onclick="saveCookieSettings(true)" class="bg-brand-green text-white py-4 rounded-xl font-black text-[10px] uppercase tracking-widest hover:brightness-110 transition-all shadow-lg shadow-green-900/20">Acceptar totes</button>
+                    <button onclick="saveCookieSettings(false)" class="glass border-white/10 text-white py-4 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-white/10 transition-all">Desar selecció</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals (Bàsics per a demostració) -->
+    <div id="modal-cookies" class="fixed inset-0 z-[110] flex items-center justify-center p-4 hidden">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="closeModal('modal-cookies')"></div>
+        <div class="glass max-w-2xl w-full p-10 relative z-10">
+            <h2 class="text-3xl font-black mb-6 italic uppercase text-brand-green">Política de Cookies</h2>
+            <div class="text-gray-400 text-sm space-y-4">
+                <p>Aquesta web utilitza cookies per a:</p>
+                <ul class="list-disc pl-5">
+                    <li>Garantir el funcionament tècnic del lloc.</li>
+                    <li>Analitzar el trànsit de forma anònima.</li>
+                    <li>Personalitzar la publicitat segons els teus interessos.</li>
+                </ul>
+            </div>
+            <button onclick="closeModal('modal-cookies')" class="mt-8 bg-brand-green px-6 py-2 rounded-lg font-bold text-xs uppercase">Tancar</button>
+        </div>
+    </div>
 
     <script>
         // Animacions al scroll
@@ -354,45 +355,59 @@
                 if (entry.isIntersecting) entry.target.classList.add('active');
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
         // Efecte del cursor glow
         const glow = document.getElementById('cursor-glow');
         window.addEventListener('mousemove', (e) => {
-            const x = e.clientX;
-            const y = e.clientY;
-            glow.style.left = (x - 400) + 'px';
-            glow.style.top = (y - 400) + 'px';
+            glow.style.transform = `translate(${e.clientX - 400}px, ${e.clientY - 400}px)`;
         });
 
-        // Simulació d'enviament
-        function handleSend(e) {
-            e.preventDefault();
-            const form = document.getElementById('contact-form');
-            const success = document.getElementById('success-msg');
-           
-            form.classList.add('animate__animated', 'animate__fadeOutDown');
-            setTimeout(() => {
-                form.classList.add('hidden');
-                success.classList.remove('hidden');
-            }, 600);
+        // GESTIÓ DE COOKIES
+        function saveCookieSettings(acceptAll) {
+            const settings = {
+                accepted: true,
+                analytics: acceptAll ? true : document.getElementById('cookie-analytics').checked,
+                marketing: acceptAll ? true : (document.getElementById('cookie-marketing') ? document.getElementById('cookie-marketing').checked : false),
+                date: new Date().toISOString()
+            };
+            localStorage.setItem('foodlogistics_cookies_v1', JSON.stringify(settings));
+            hideBanner();
         }
+
+        function hideBanner() {
+            const banner = document.getElementById('cookie-banner');
+            banner.classList.replace('animate__fadeInUp', 'animate__fadeOutDown');
+            setTimeout(() => banner.style.display = 'none', 600);
+        }
+
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        // Gestió del formulari
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            btn.innerText = "ENVIANT...";
+            setTimeout(() => {
+                btn.innerText = "SOL·LICITUD REBUDA!";
+                btn.classList.add('bg-blue-600');
+                e.target.reset();
+            }, 1500);
+        });
+
+        // Verificar cookies en carregar
+        window.onload = function() {
+            if (!localStorage.getItem('foodlogistics_cookies_v1')) {
+                setTimeout(() => {
+                    document.getElementById('cookie-banner').classList.remove('hidden');
+                }, 1000);
+            }
+        };
     </script>
-    <!-- Default Statcounter code for Web Cprporativa
-https://polserrano.github.io/web-corporativa/ -->
-<script type="text/javascript">
-var sc_project=13214958; 
-var sc_invisible=1; 
-var sc_security="8f8b756a"; 
-</script>
-<script type="text/javascript"
-src="https://www.statcounter.com/counter/counter.js" async></script>
-<noscript><div class="statcounter"><a title="Web Analytics Made Easy -
-Statcounter" href="https://statcounter.com/" target="_blank"><img
-class="statcounter" src="https://c.statcounter.com/13214958/0/8f8b756a/1/"
-alt="Web Analytics Made Easy - Statcounter"
-referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-<!-- End of Statcounter Code -->
 </body>
 </html>
