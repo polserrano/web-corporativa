@@ -139,21 +139,24 @@
 
     <!-- Navegació -->
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl">
-        <div class="glass px-6 md:px-10 py-5 flex justify-between items-center border-white/10">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-brand-green rounded-xl flex items-center justify-center rotate-3 shadow-lg shadow-green-900/20">
-                    <i class="fas fa-shipping-fast text-white"></i>
-                </div>
-                <span class="font-black tracking-tighter text-2xl uppercase italic">Food<span class="text-brand-green">Logistics</span></span>
-            </div>
-            <div class="hidden md:flex gap-10 font-bold text-xs uppercase tracking-[0.2em] text-gray-400">
-                <a href="#inici" class="hover:text-brand-green transition-colors">Inici</a>
-                <a href="#serveis" class="hover:text-brand-green transition-colors">Serveis</a>
-                <a href="#contacte" class="hover:text-brand-green transition-colors">Contacte</a>
-            </div>
-            <a href="#contacte" class="bg-brand-green text-white px-8 py-3 rounded-full font-black text-xs hover:bg-white hover:text-brand-dark transition-all duration-300 uppercase">Parlem?</a>
+    <div class="glass px-6 md:px-10 py-5 flex justify-between items-center border-white/10">
+        <a href="#inici" class="flex items-center">
+            <img src="/docs/img/FoodLogisticLogo.png" 
+                 alt="Logo FoodLogistics" 
+                 class="h-10 w-auto object-contain hover:opacity-80 transition-opacity">
+        </a>
+
+        <div class="hidden md:flex gap-10 font-bold text-xs uppercase tracking-[0.2em] text-gray-400">
+            <a href="#inici" class="hover:text-brand-green transition-colors">Inici</a>
+            <a href="#serveis" class="hover:text-brand-green transition-colors">Serveis</a>
+            <a href="#contacte" class="hover:text-brand-green transition-colors">Contacte</a>
         </div>
-    </nav>
+
+        <a href="#contacte" class="bg-brand-green text-white px-8 py-3 rounded-full font-black text-xs hover:bg-white hover:text-brand-dark transition-all duration-300 uppercase">Parlem?</a>
+    </div>
+</nav>
+
+    
 
     <!-- Hero Section -->
     <section id="inici" class="section-full relative overflow-hidden">
