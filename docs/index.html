@@ -111,7 +111,6 @@
             background: rgba(255, 255, 255, 0.06);
         }
 
-        /* Toggle Switch per a Cookies */
         .switch {
             position: relative; display: inline-block; width: 44px; height: 24px;
         }
@@ -137,7 +136,6 @@
 
     <div class="bg-glow" id="cursor-glow"></div>
 
-    <!-- Navegació -->
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl">
     <div class="glass px-6 md:px-10 py-5 flex justify-between items-center border-white/10">
         <a href="#inici" class="flex items-center">
@@ -157,8 +155,6 @@
 </nav>
 
     
-
-    <!-- Hero Section -->
     <section id="inici" class="section-full relative overflow-hidden">
         <div class="absolute inset-0 z-0 opacity-20">
             <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=2000&q=80" alt="Logística" class="w-full h-full object-cover">
@@ -184,7 +180,6 @@
 
         <div class="bento-grid">
 
-            <!-- SMART COLD CONTROL -->
             <div class="bento-item col-span-2 row-span-2 reveal glass p-10 relative overflow-hidden">
                 <img 
                     src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=800&q=80" 
@@ -196,7 +191,6 @@
                 </div>
             </div>
 
-            <!-- ÚLTIMA MILLA -->
             <div class="bento-item col-span-2 reveal glass p-10 relative overflow-hidden">
                 <img 
                     src="https://d3nqciqdbtzkc.cloudfront.net/articulos/articulos-51839.jpg" 
@@ -208,7 +202,6 @@
                 </div>
             </div>
 
-            <!-- KPI CLIENTS -->
             <div class="bento-item reveal glass p-10 relative overflow-hidden">
                 <img 
                     src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" 
@@ -220,7 +213,6 @@
                 </div>
             </div>
 
-            <!-- KPI SUPORT -->
             <div class="bento-item reveal glass p-10 relative overflow-hidden">
                 <img 
                     src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=800&q=80" 
@@ -236,12 +228,10 @@
     </div>
 </section>
 
-    <!-- Secció de Contacte -->
     <section id="contacte" class="py-32 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 relative z-10">
             <div class="grid lg:grid-cols-5 gap-16 items-start">
                 
-                <!-- Informació de contacte -->
                 <div class="lg:col-span-2 reveal">
                     <h2 class="text-5xl md:text-7xl font-black mb-10 leading-none">CONNECTA <br><span class="text-brand-green italic">AMB NOSALTRES</span></h2>
                     <p class="text-gray-400 text-lg mb-12 max-w-sm">Estem preparats per optimitzar la teva cadena de subministrament. Resposta garantida en menys de 2 hores laborables.</p>
@@ -268,7 +258,6 @@
                     </div>
                 </div>
 
-                <!-- Formulari -->
                 <div class="lg:col-span-3 reveal">
                     <div class="glass p-8 md:p-12 border-white/5 relative">
                         <form id="contact-form" class="grid md:grid-cols-2 gap-6">
@@ -299,7 +288,6 @@
         </div>
     </section>
 
-    <!-- Peu de pàgina -->
    <footer class="py-20 border-t border-white/5 relative z-10">
     <div class="max-w-7xl mx-auto px-4">
         <div class="flex flex-col md:flex-row justify-between items-center gap-10">
@@ -318,7 +306,6 @@
         </div>
     </footer>
 
-    <!-- BANNER DE COOKIES (NOU) -->
     <div id="cookie-banner" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] w-[92%] max-w-4xl hidden animate__animated animate__fadeInUp">
         <div class="glass p-6 md:p-8 border-brand-green/20 shadow-2xl relative overflow-hidden bg-brand-dark/90">
             <div class="flex flex-col lg:flex-row gap-8 items-center">
@@ -354,9 +341,7 @@
             </div>
         </div>
     </div>
-
-    <!-- Modals (Bàsics per a demostració) -->
-    
+ 
     <div id="modal-avis" class="fixed inset-0 z-[110] flex items-center justify-center p-4 hidden">
         <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="closeModal('modal-avis')"></div>
         <div class="glass max-w-3xl w-full max-h-[80vh] flex flex-col relative z-10 overflow-hidden border-white/10">
@@ -470,7 +455,6 @@
     </div>
 
     <style>
-        /* Estil per a la barra de scroll dels modals */
         .custom-scrollbar::-webkit-scrollbar {
             width: 6px;
         }
@@ -484,7 +468,6 @@
     </style>
 
     <script>
-        // Animacions al scroll
         const obs = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('active');
@@ -492,13 +475,11 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-        // Efecte del cursor glow
         const glow = document.getElementById('cursor-glow');
         window.addEventListener('mousemove', (e) => {
             glow.style.transform = `translate(${e.clientX - 400}px, ${e.clientY - 400}px)`;
         });
 
-        // GESTIÓ DE COOKIES
         function saveCookieSettings(acceptAll) {
             const settings = {
                 accepted: true,
@@ -523,7 +504,6 @@
             document.getElementById(id).classList.add('hidden');
         }
 
-        // Gestió del formulari
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = e.target.querySelector('button');
@@ -534,8 +514,6 @@
                 e.target.reset();
             }, 1500);
         });
-
-        // Verificar cookies en carregar
         window.onload = function() {
             if (!localStorage.getItem('foodlogistics_cookies_v1')) {
                 setTimeout(() => {
